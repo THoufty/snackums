@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import {
 	ApolloClient,
@@ -15,6 +14,10 @@ import Login from './pages/Login';
 import Nav from './components/Nav';
 import NoMatch from './pages/NoMatch';
 import Signup from './pages/Signup';
+import Germany from './pages/Germany';
+import Mexico from './pages/Mexico';
+import Japan from './pages/Japan';
+import Australia from './pages/Australia';
 
 const httpLink = createHttpLink({
 	uri: '/graphql',
@@ -58,6 +61,22 @@ function App() {
 							<Route
 								path="*"
 								element={<NoMatch />}
+							/>
+														<Route
+								path="/germany"
+								element={<Germany />}
+							/>
+							<Route
+								path="/japan"
+								element={<Japan />}
+							/>
+							<Route
+								path="/australia"
+								element={<Australia />}
+							/>
+							<Route
+								path="mexico"
+								element={<Mexico />}
 							/>
 						</Routes>
 					</AppProvider>
