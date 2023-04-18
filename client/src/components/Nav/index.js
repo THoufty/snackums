@@ -91,7 +91,7 @@ function Nav() {
 	return (
 		<header className="flex-row px-1">
 			<h1>
-				Sample Application
+				Snackums! 🐶
 			</h1>
 
 			<nav>
