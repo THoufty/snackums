@@ -3,17 +3,27 @@ import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 
 const styles = {
-	btnFloating: {
-		borderRadius: '40px',
-		width: '203px',
-		height: '203px',
-		display: 'flex',
+	navGreen: {
+		backgroundColor: 'green',
 	},
 
-	btnFloatingImg: {
-		width: '100%',
-		height: '100%',
-	}
+	navGreenUl: {
+		display: 'flex',
+		justifyContent: 'space-between',
+		alignItems: 'center',
+		listStyle: 'none',
+		margin: 0,
+		padding: 0,
+	},
+
+	navGreenLi: {
+		padding: '0 1rem',
+	},
+
+	navGreenA: {
+		color: 'white',
+		textDecoration: 'none',
+	},
 }
 
 
@@ -24,22 +34,22 @@ function Nav() {
 
 		if (Auth.loggedIn()) {
 			return (
-				<nav>
+				<nav style={styles.navGreen}>
 					<div className="nav-wrapper">
-						<ul id="nav-mobile" class="right hide-on-med-and-down">
-							<li>
+						<ul id="nav-mobile" className="right hide-on-med-and-down" style={styles.navGreenUl}>
+							<li style={styles.navGreenLi}>
 								<Link to="/Mexico">Mexico</Link>
 							</li>
-							<li>
+							<li style={styles.navGreenLi}>
 								<Link to="/Germany">Germany</Link>
 							</li>
-							<li>
+							<li style={styles.navGreenLi}>
 								<Link to="/Japan">Japan</Link>
 							</li>
-							<li>
+							<li style={styles.navGreenLi}>
 								<Link to="/Australia">Australia</Link>
 							</li>
-							<li>
+							<li style={styles.navGreenLi}>
 								<a href="/" onClick={() => Auth.logout()}>
 									Logout
 								</a>
@@ -50,15 +60,9 @@ function Nav() {
 			);
 		} else {
 			return (
-				<nav>
+				<nav style={styles.navGreen}>
 					<div className="nav-wrapper">
-						<ul id="nav-mobile" class="right hide-on-med-and-down">
-							<li>
-								<Link to="/signup">Signup</Link>
-							</li>
-							<li>
-								<Link to="/login">Login</Link>
-							</li>
+						<ul id="nav-mobile" className="right hide-on-med-and-down" style={styles.navGreenUl}>
 							<li>
 								<Link to="/Mexico">Mexico</Link>
 							</li>
@@ -70,6 +74,12 @@ function Nav() {
 							</li>
 							<li>
 								<Link to="/Australia">Australia</Link>
+							</li>
+							<li>
+								<Link to="/signup">Signup</Link>
+							</li>
+							<li>
+								<Link to="/login">Login</Link>
 							</li>
 						</ul>
 					</div>
