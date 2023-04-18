@@ -2,34 +2,28 @@ import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
 
+
+
 function Nav() {
 
+
 	function showNavigation() {
-		<ul className="flex-row">
-		<li className="mx-1">
-			<Link to="/Mexico">
-				Signup
-			</Link>
-		</li>
-		<li className="mx-1">
-			<Link to="/Germany">
-				Login
-			</Link>
-		</li>
-		<li className="mx-1">
-			<Link to="/Japan">
-				Login
-			</Link>
-		</li>
-		<li className="mx-1">
-			<Link to="/Australia">
-				Login
-			</Link>
-		</li>
-	</ul>
+
 		if (Auth.loggedIn()) {
 			return (
 				<ul className="flex-row">
+					<li className="mx-1">
+						<Link to="/Mexico">Mexico</Link>
+					</li>
+					<li className="mx-1">
+						<Link to="/Germany">Germany</Link>
+					</li>
+					<li className="mx-1">
+						<Link to="/Japan">Japan</Link>
+					</li>
+					<li className="mx-1">
+						<Link to="/Australia">Australia</Link>
+					</li>
 					<li className="mx-1">
 						<a href="/" onClick={() => Auth.logout()}>
 							Logout
@@ -41,14 +35,22 @@ function Nav() {
 			return (
 				<ul className="flex-row">
 					<li className="mx-1">
-						<Link to="/signup">
-							Signup
-						</Link>
+						<Link to="/signup">Signup</Link>
 					</li>
 					<li className="mx-1">
-						<Link to="/login">
-							Login
-						</Link>
+						<Link to="/login">Login</Link>
+					</li>
+					<li className="mx-1">
+						<Link to="/Mexico">Mexico</Link>
+					</li>
+					<li className="mx-1">
+						<Link to="/Germany">Germany</Link>
+					</li>
+					<li className="mx-1">
+						<Link to="/Japan">Japan</Link>
+					</li>
+					<li className="mx-1">
+						<Link to="/Australia">Australia</Link>
 					</li>
 				</ul>
 			);
