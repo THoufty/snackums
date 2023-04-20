@@ -21,3 +21,15 @@ export const QUERY_PRODUCT = gql`
   }
 }
 `;
+
+export const QUERY_PRODUCT_COUNTRY = gql`
+query getSingleCountry($country: String!){
+product(country: $country) {
+    _id
+    item_name
+    price_usd
+    image
+    description
+  }
+}
+`;

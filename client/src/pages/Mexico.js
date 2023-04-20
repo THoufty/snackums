@@ -1,10 +1,14 @@
-import { useQuery } from '@apollo/client';
+import { useQuery, } from '@apollo/client';
+import { QUERY_PRODUCT_COUNTRY } from '../utils/queries'
 
 
 
 const Mexico = () => {
 
-	const { loading, data } = useQuery()
+	const { loading, data } = useQuery(QUERY_PRODUCT_COUNTRY, {
+		variables: { country: "mexico" }
+	})
+	
 	const product = data?.products || [];
 
 
