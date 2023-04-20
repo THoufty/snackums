@@ -27,6 +27,22 @@ Product.init(
 	notEmpty: true,
       },
     },
+    country: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: true,
+        notEmpty: true,
+      },
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: true,
+        notEmpty: true,
+      },
+    },
     description: {
       type: DataTypes.STRING,
       allowNull:false,
