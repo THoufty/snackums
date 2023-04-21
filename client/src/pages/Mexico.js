@@ -23,7 +23,7 @@ const Mexico = () => {
 							<div>
 								<div class="card-image">
 									<img alt="product" src={`${product.image}`}></img>
-									<span class="card-title">{`${product.name}`}</span>
+									<span class="card-title">{`${product.item_name}`}</span>
 									<a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
 								</div>
 								<div class="card-content">

@@ -1,9 +1,11 @@
 const db = require('./connection');
-const { User } = require('../models');
+const { User, Product } = require('../models');
+const productseeds = require('../seeders/productseeds.json');
+
 
 db.once('open', async () => {
 
-	await User.deleteMany();
+	await User.destroy();
 
 	await User.create({
 		firstName: 'Pamela',
@@ -21,5 +23,11 @@ db.once('open', async () => {
 
 	console.log('users seeded');
 
-	process.exit();
+	await Product.destroy({});
+	await Product.bulkCreate(productseeds);
+
+	console.log('all done!');
+
+	process.exit(0);
+
 });
