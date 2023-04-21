@@ -1,7 +1,7 @@
 const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/config');
+const sequelize = require('../config/connection');
 
-class Product extends Model {}
+class Product extends Model { }
 
 Product.init(
   {
@@ -13,7 +13,7 @@ Product.init(
     },
     item_name: {
       type: DataTypes.STRING,
-      allowNull:false,
+      allowNull: false,
       validate: {
         notNull: true,
         notEmpty: true,
@@ -21,10 +21,10 @@ Product.init(
     },
     price_usd: {
       type: DataTypes.DECIMAL,
-      allowNull:false,
+      allowNull: false,
       validate: {
-	notNull: true,
-	notEmpty: true,
+        notNull: true,
+        notEmpty: true,
       },
     },
     country: {
@@ -37,18 +37,14 @@ Product.init(
     },
     image: {
       type: DataTypes.STRING,
+      allowNull: true,
+    },
+    description: {
+      type: DataTypes.STRING,
       allowNull: false,
       validate: {
         notNull: true,
         notEmpty: true,
-      },
-    },
-    description: {
-      type: DataTypes.STRING,
-      allowNull:false,
-      validate: {
-	notNull: true,
-	notEmpty: true,
       },
     },
   },

@@ -1,29 +1,28 @@
-// import models
 const Product = require('./Product');
+const ProductCart = require('./ProductCart');
 const User = require('./User');
 const Cart = require("./Cart");
 
-Cart.hasMany(Product, {
-  foreignKey: "product_id",
+User.hasOne(Cart, {
+  foreignKey: "user_id",
+});
+
+Cart.belongsToMany(Product, {
+  foreignKey: "cart_id",
+  through: ProductCart
 });
 
 Product.belongsToMany(Cart, {
-  foreignKey: "product_id"
+  foreignKey: "product_id",
+  through: ProductCart
 });
 
 Cart.belongsTo(User, {
   foreignKey: "user_id"
 });
 
-User.hasOne(Cart, {
-  foreign: "user_id",
-});
-  
-
-
-
 module.exports = {
-  Product,
-  Category,
+  User,
   Cart,
+  Product,
 };
