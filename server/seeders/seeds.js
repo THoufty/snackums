@@ -1,4 +1,6 @@
-[
+const { Product } = require('../models');
+
+const snackums = [
     {
         "itemName": "Takis Fuego",
         "priceUSD": 1.49,
@@ -360,3 +362,7 @@
         "description": "Chewy raspberry-flavored candies that are a childhood favorite in Australia."
       }
     ]
+
+Product.bulkCreate(snackums);
+
+
