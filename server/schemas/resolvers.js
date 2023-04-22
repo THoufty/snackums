@@ -25,7 +25,9 @@ const resolvers = {
       }
       throw new AuthenticationError('Not logged in');
     },
-    
+    country: async (parent, { country }) => {
+      return Product.findOne({ country: country });
+    },
   },
 
   Mutation: {
