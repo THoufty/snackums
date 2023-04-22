@@ -1,5 +1,7 @@
+import React from 'react';
 import { useQuery, } from '@apollo/client';
 import { QUERY_PRODUCT_COUNTRY } from '../utils/queries'
+
 
 
 
@@ -8,7 +10,7 @@ const Mexico = () => {
 	const { loading, data } = useQuery(QUERY_PRODUCT_COUNTRY, {
 		variables: { country: "mexico" }
 	})
-	
+	console.log(loading)
 	const product = data?.products || [];
 
 
@@ -16,15 +18,15 @@ const Mexico = () => {
 
 
 		<div className="container">
-			<div class="row">
-				<div class="col s12 m6">
-					<div class="card">
+			<div className="row">
+				<div className="col s12 m6">
+					<div className="card">
 						{product.map((product) => (
 							<div>
-								<div class="card-image">
+								<div className="card-image">
 									<img alt="product" src={`${product.image}`}></img>
-									<span class="card-title">{`${product.item_name}`}</span>
-									<a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+									<span className="card-title">{`${product.item_name}`}</span>
+									{/* <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a> */}
 								</div>
 								<div class="card-content">
 									<p>{`${product.description}` }</p>

@@ -32,6 +32,7 @@ const typeDefs = gql`
     user: User
     product: Product
     cart: Cart
+    country: Product
   }
 
   type Mutation {

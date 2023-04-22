@@ -62,7 +62,7 @@ function App() {
 								path="*"
 								element={<NoMatch />}
 							/>
-														<Route
+							<Route
 								path="/germany"
 								element={<Germany />}
 							/>
@@ -75,7 +75,7 @@ function App() {
 								element={<Australia />}
 							/>
 							<Route
-								path="mexico"
+								path="/mexico"
 								element={<Mexico />}
 							/>
 						</Routes>
