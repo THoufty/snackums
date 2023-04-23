@@ -1,0 +1,92 @@
+[
+  {
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "johndoe@example.com",
+    "password": "password123"
+  },
+  {
+    "first_name": "Jane",
+    "last_name": "Doe",
+    "email": "janedoe@example.com",
+    "password": "password456"
+  },
+  {
+    "first_name": "Mark",
+    "last_name": "Smith",
+    "email": "marksmith@example.com",
+    "password": "password789"
+  },
+  {
+    "first_name": "Sara",
+    "last_name": "Williams",
+    "email": "sarawilliams@example.com",
+    "password": "password1234"
+  },
+  {
+    "first_name": "Tom",
+    "last_name": "Brown",
+    "email": "tombrown@example.com",
+    "password": "password5678"
+  },
+  {
+    "first_name": "Emily",
+    "last_name": "Jones",
+    "email": "emilyjones@example.com",
+    "password": "password9012"
+  },
+  {
+    "first_name": "David",
+    "last_name": "Lee",
+    "email": "davidlee@example.com",
+    "password": "password3456"
+  },
+  {
+    "first_name": "Jennifer",
+    "last_name": "Wilson",
+    "email": "jenniferwilson@example.com",
+    "password": "password7890"
+  },
+  {
+    "first_name": "Michael",
+    "last_name": "Davis",
+    "email": "michaeldavis@example.com",
+    "password": "password12345"
+  },
+  {
+    "first_name": "Amy",
+    "last_name": "Taylor",
+    "email": "amytaylor@example.com",
+    "password": "password6789"
+  },
+  {
+    "first_name": "Brian",
+    "last_name": "Clark",
+    "email": "brianclark@example.com",
+    "password": "password0123"
+  },
+  {
+    "first_name": "Karen",
+    "last_name": "Hall",
+    "email": "karenhall@example.com",
+    "password": "password4567"
+  },
+  {
+    "first_name": "Daniel",
+    "last_name": "Allen",
+    "email": "danielallen@example.com",
+    "password": "password8901"
+  },
+  {
+    "first_name": "Olivia",
+    "last_name": "Green",
+    "email": "oliviagreen@example.com",
+    "password": "password2345"
+  },
+  {
+    "first_name": "Kevin",
+    "last_name": "Scott",
+    "email": "kevinscott@example.com",
+    "password": "password6789"
+  }
+]

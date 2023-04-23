@@ -1,7 +1,4 @@
-const sequelize = require('./connection');
-const { Product, User, Cart } = require('../models');
-
-const snackums = [
+[
   {
     "item_name": "Takis Fuego",
     "price_usd": 1.49,
@@ -423,7 +420,4 @@ const snackums = [
     "description": "Chewy raspberry-flavored candies that are a childhood favorite in Australia."
   }
 ]
-sequelize.sync({ force: true }).then(() =>
-  Product.bulkCreate(snackums));
-
 

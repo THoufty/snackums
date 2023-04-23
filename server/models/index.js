@@ -1,5 +1,5 @@
 const Product = require('./Product');
-const ProductCart = require('./ProductCart');
+const ProductInCart = require('./ProductInCart');
 const User = require('./User');
 const Cart = require("./Cart");
 
@@ -9,12 +9,12 @@ User.hasOne(Cart, {
 
 Cart.belongsToMany(Product, {
   foreignKey: "cart_id",
-  through: ProductCart
+  through: ProductInCart
 });
 
 Product.belongsToMany(Cart, {
   foreignKey: "product_id",
-  through: ProductCart
+  through: ProductInCart
 });
 
 Cart.belongsTo(User, {

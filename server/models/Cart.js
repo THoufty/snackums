@@ -23,22 +23,14 @@ Cart.init(
         key: "id"
       }
     },
-    price_total_usd: {
-      type: DataTypes.DECIMAL,
-      allowNull: false,
-      validate: {
-        notNull: true,
-        notEmpty: true,
-      },
-    },
-    product_id: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-      references: {
-        model: 'product',
-        key: 'id'
-      }
-    },
+//    price_total_usd: {
+//      type: DataTypes.DECIMAL,
+//      allowNull: false,
+//      validate: {
+//        notNull: true,
+//        notEmpty: true,
+//      },
+//    },
   },
   {
     sequelize,
