@@ -2,50 +2,59 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
   type User {
-    id: ID
-    firstName: String
-    lastName: String
-    email: String
-    password: Sting
-  }
-
-  type Auth {
-    token: ID
-    user: User
+    id: ID!
+    firstName: String!
+    lastName: String!
+    email: String!
+    password: String!
   }
 
   type Cart {
-    id: ID
-    user_id
-    price_total_usd
-    product_id
+    id: ID!
+    user_id: ID!
   }
 
   type Product {
-    id: ID
-    item_name
-    price_usd
-    description
+    id: ID!
+    itemName: String!
+    priceUsd: Float!
+    country: String!
+    image: String
+    description: String!
+  }
+
+  type ProductInCart {
+    id: ID!
+    productId: ID!
+    cartId: ID!
+  }
+
+  type Auth {
+    token: ID!
+    user: User
   }
 
   type Query {
-    user: User
-    product: Product
-    cart: Cart
-    country: Product
+    users: [User]!
+    user(email: String!): User
+    products: [Product]!
+    product(id: ID!): Product
+    cart(userId: ID!): [Product]!
   }
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    updateUser(firstName: String, lastName: String, email: String, password: String): User
-    deleteUser(id: ID!): User
+    updateUser(userId: ID!, firstName: String, lastName: String, email: String, password: String): User
+    deleteUser(userId: ID!): User
     login(email: String!, password: String!): Auth
-    addProduct(id:ID!, item_name: String!, price_usd: Decimal!, description: String!): Product
-    updateProduct(id:ID!, item_name: String, price_usd: Decimal, country: String, image: String, description: String): Product
-    deleteProduct(id:ID!): Product
-    addToCart(id:ID!, product_id: ID!): Cart
-    removeFromCart(id:ID!, product_id: ID!): Cart
+    addProduct(productId:ID!, itemName: String!, priceUsd: Decimal!, description: String!): Product
+    updateProduct(productId:ID!, itemName: String, priceUsd: Decimal, country: String, image: String, description: String): Product
+    deleteProduct(poductId:ID!): Product
+    addToCart(cartId:ID!, productId: ID!): Cart
+    removeFromCart(cartId ID!, productId: ID!): Cart
+
   }
 `;
 
 module.exports = typeDefs;
+

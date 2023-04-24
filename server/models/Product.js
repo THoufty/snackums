@@ -11,7 +11,8 @@ Product.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    item_name: {
+    
+    itemName: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
@@ -19,7 +20,8 @@ Product.init(
         notEmpty: true,
       },
     },
-    price_usd: {
+    
+    priceUsd: {
       type: DataTypes.DECIMAL,
       allowNull: false,
       validate: {
@@ -27,6 +29,7 @@ Product.init(
         notEmpty: true,
       },
     },
+    
     country: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -35,10 +38,12 @@ Product.init(
         notEmpty: true,
       },
     },
+    
     image: {
       type: DataTypes.STRING,
       allowNull: true,
     },
+    
     description: {
       type: DataTypes.STRING,
       allowNull: false,
