@@ -9,26 +9,27 @@ const resolvers = {
     users: async (parent, args, context) => {
       return await User.findAll();
     },
-    
-    user: async (parent, {email}, context) => {
-      if (context.user) {
-	return await User.findOne({where: {email}});
-      }
-      throw new AuthenticationError('Not logged in');
-    },
 
-    //FUNCTIONING
+    // Functioning without authentcation
+    user: async (parent, {email}, context) => {
+//      if (context.user) {
+	return await User.findOne({where: {email}});
+    },
+//      throw new AuthenticationError('Not logged in');
+//    },
+
+    // FUNCTIONING
     products: async (parent, args, context) => {
       return await Product.findAll();
     },
-    
-    product: async (parent, args, context) => {
-      if(context.product) {
-	const product = await Product.findByPk(context.product.id)
-	return user;
-      }
-      throw new AuthenticationError('Not logged in');
+
+    // NOT FUNCTIONING - cannot readd poperties fo oundefined
+    product: async (parent, {productId}, context) => {
+//      if(context.product) {
+      return await Product.findByPk(productId);
     },
+//      throw new AuthenticationError('Not logged in');
+//    },
 
     cart: async (parent, {userId}, context) => {
       //if(context.user) {
@@ -79,7 +80,7 @@ const resolvers = {
       );
     },
     
-    //NOT FUNCTIONING
+    // FUNCTIONING
     login: async (parent, { email, password }, context) => {
       const user = await User.findOne({where: { email }});
       if (!user) {
