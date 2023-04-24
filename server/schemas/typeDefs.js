@@ -44,19 +44,17 @@ const typeDefs = gql`
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    updateUser(firstName: String, lastName: String, email: String, password: String): User
-    deleteUser(id: ID!): User
+    updateUser(userId: ID!, firstName: String, lastName: String, email: String, password: String): User
+    deleteUser(userId: ID!): User
     login(email: String!, password: String!): Auth
+    addProduct(productId:ID!, itemName: String!, priceUsd: Decimal!, description: String!): Product
+    updateProduct(productId:ID!, itemName: String, priceUsd: Decimal, country: String, image: String, description: String): Product
+    deleteProduct(poductId:ID!): Product
+    addToCart(cartId:ID!, productId: ID!): Cart
+    removeFromCart(cartId ID!, productId: ID!): Cart
 
   }
 `;
 
 module.exports = typeDefs;
 
-//    addProduct(id:ID!, itemName: String!, priceUsd: Decimal!, description: String!): Product
-//    updateProduct(id:ID!, itemName: String, priceUsd: Decimal, country: String, image: String, description: String): Product
-//    deleteProduct(id:ID!): Product
-//    addToCart(id:ID!, productId: ID!): Cart
-//    removeFromCart(id:ID!, productId: ID!): Cart
-//  }
-//
