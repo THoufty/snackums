@@ -87,336 +87,336 @@
     "itemName": "Quesadillas",
     "priceUsd": 4.49,
     "country": "mexico",
-    "image": "../images/quesadillas",
+    "image": "../images/quesadillas.jpg",
     "description": "Grilled flour tortillas filled with melted cheese and your choice of meat or vegetables."
   },
   {
     "itemName": "Chicharrones",
     "priceUsd": 2.99,
     "country": "mexico",
-    "image": "../images/chicharrones",
+    "image": "../images/chicharrones.jpg",
     "description": "Crispy pork rinds seasoned with chili powder and lime juice."
   },
   {
     "itemName": "Salsa and chips",
     "priceUsd": 3.99,
     "country": "mexico",
-    "image": "../images/salsaAndChips",
+    "image": "../images/salsaAndChips.jpg",
     "description": "Freshly made salsa with diced tomatoes, onions, cilantro, and jalapeño peppers served with crispy tortilla chips."
   },
   {
     "itemName": "Pocky",
     "priceUsd": 3.99,
     "country": "japan",
-    "image": "../images/pocky",
+    "image": "../images/pocky.png",
     "description": "A thin, crunchy biscuit stick coated in various flavors of chocolate, such as strawberry, matcha, and chocolate."
   },
   {
     "itemName": "KitKat",
     "priceUsd": 4.99,
     "country": "japan",
-    "image": "../images/kitkat",
+    "image": "../images/kitkat.jpg",
     "description": "A chocolate-covered wafer biscuit that comes in a variety of unique and unusual flavors, such as green tea, sake, and wasabi."
   },
   {
     "itemName": "Calbee Jagabee Potato Sticks",
     "priceUsd": 2.99,
     "country": "japan",
-    "image": "../images/calbeeJagabeePotatoSticks",
+    "image": "../images/calbeeJagabeePotatoSticks.jpg",
     "description": "Crispy, crunchy potato sticks that come in a variety of flavors, such as butter soy sauce and honey butter."
   },
   {
     "itemName": "Umaibo",
     "priceUsd": 1.99,
     "country": "japan",
-    "image": "../images/umaibo",
+    "image": "../images/umaibo.png",
     "description": "A puffed corn snack that comes in various flavors, such as cheese, teriyaki burger, and corn potage."
   },
   {
     "itemName": "Hello Panda",
     "priceUsd": 3.49,
     "country": "japan",
-    "image": "../images/helloPanda",
+    "image": "../images/helloPanda.jpg",
     "description": "A crunchy, bite-sized biscuit with a creamy chocolate or strawberry filling that's shaped like a panda face."
   },
   {
     "itemName": "Dagashi Snacks",
     "priceUsd": 5.99,
     "country": "japan",
-    "image": "../images/dagashiSnacks",
+    "image": "../images/dagashiSnacks.png",
     "description": "A variety of traditional Japanese sweets and snacks, such as senbei rice crackers, mochi, and hi-chew candy."
   },
   {
     "itemName": "Pretz",
     "priceUsd": 2.99,
     "country": "japan",
-    "image": "../images/pretz",
+    "image": "../images/pretz.png",
     "description": "A savory biscuit stick that comes in various flavors, such as pizza, salad, and garlic."
   },
   {
     "itemName": "Lotte Koala's March",
     "priceUsd": 3.49,
     "country": "japan",
-    "image": "../images/lotteKoalasMarch",
+    "image": "../images/lotteKoalasMarch.jpg",
     "description": "A biscuit snack with a creamy chocolate or strawberry filling that's shaped like a koala face."
   },
   {
     "itemName": "Dorayaki",
     "priceUsd": 6.99,
     "country": "japan",
-    "image": "../images/dorayaki",
+    "image": "../images/dorayaki.jpg",
     "description": "A traditional Japanese sweet made of two pancake-like layers with a sweet red bean filling in the center."
   },
   {
     "itemName": "Onigiri",
     "priceUsd": 4.99,
     "country": "japan",
-    "image": "../images/onigiri",
+    "image": "../images/onigiri.jpg",
     "description": "A triangular-shaped rice ball wrapped in seaweed and filled with various ingredients, such as salmon, tuna, or pickled plum."
   },
   {
     "itemName": "Yatsuhashi",
     "priceUsd": 7.99,
     "country": "japan",
-    "image": "../images/yatsuhashi",
+    "image": "../images/yatsuhashi.jpg",
     "description": "A traditional Kyoto sweet made of mochi (sticky rice cake) filled with sweet red bean paste and flavored with cinnamon."
   },
   {
     "itemName": "Sakura Mochi",
     "priceUsd": 6.99,
     "country": "japan",
-    "image": "../images/sakuraMochi",
+    "image": "../images/sakuraMochi.jpg",
     "description": "A traditional Japanese sweet made of mochi (sticky rice cake) filled with sweet red bean paste and wrapped in a pickled cherry blossom leaf."
   },
   {
     "itemName": "Ramune",
     "priceUsd": 2.99,
     "country": "japan",
-    "image": "../images/ramune",
+    "image": "../images/ramune.jpg",
     "description": "A carbonated soft drink that comes in a unique glass bottle sealed with a marble, with flavors like original, strawberry, and melon."
   },
   {
     "itemName": "Haribo Goldbears",
     "priceUsd": 1.99,
     "country": "germany",
-    "image": "../images/hariboGoldbears",
+    "image": "../images/hariboGoldbears.jpg",
     "description": "A classic gummy candy that comes in a variety of fruity flavors."
   },
   {
     "itemName": "Ritter Sport Milk Chocolate",
     "priceUsd": 2.49,
     "country": "germany",
-    "image": "../images/ritterSportMilkChocolate",
+    "image": "../images/ritterSportMilkChocolate.jpg",
     "description": "Creamy milk chocolate with a snap of the distinctive square shape."
   },
   {
     "itemName": "Bahlsen Leibniz Cookies",
     "priceUsd": 3.99,
     "country": "germany",
-    "image": "../images/bahlsenLeibnizCookies",
+    "image": "../images/bahlsenLeibnizCookies.jpg",
     "description": "Buttery, crispy biscuits that are perfect for snacking or dipping in coffee."
   },
   {
     "itemName": "Lorenz Crunchips",
     "priceUsd": 1.79,
     "country": "germany",
-    "image": "../images/lorenzCrunchips",
+    "image": "../images/lorenzCrunchips.png",
     "description": "Crispy, flavorful potato chips in a variety of different flavors."
   },
   {
     "itemName": "Milka Chocolate Bar",
     "priceUsd": 1.99,
     "country": "germany",
-    "image": "../images/milkaChocolateBar",
+    "image": "../images/milkaChocolateBar.jpg",
     "description": "Creamy milk chocolate made with Alpine milk and a variety of other delicious flavors."
   },
   {
     "itemName": "Knoppers Wafers",
     "priceUsd": 2.99,
     "country": "germany",
-    "image": "../images/knoppersWafers",
+    "image": "../images/knoppersWafers.jpg",
     "description": "Crispy wafers with a creamy nougat filling and a milk chocolate coating."
   },
   {
     "itemName": "Manner Wafers",
     "priceUsd": 2.49,
     "country": "germany",
-    "image": "../images/mannerWafers",
+    "image": "../images/mannerWafers.jpg",
     "description": "Thin and crispy wafer cookies with a layer of hazelnut cream filling."
   },
   {
     "itemName": "Kinder Chocolate",
     "priceUsd": 1.99,
     "country": "germany",
-    "image": "../images/kinderChocolate",
+    "image": "../images/kinderChocolate.jpg",
     "description": "Smooth milk chocolate with a creamy milk filling."
   },
   {
     "itemName": "Hanuta Hazelnut Sandwich",
     "priceUsd": 2.99,
     "country": "germany",
-    "image": "../images/hanutaHazelnutSandwich",
+    "image": "../images/hanutaHazelnutSandwich.jpg",
     "description": "A delicious hazelnut cream filling between two crispy wafer layers."
   },
   {
     "itemName": "Bahlsen Hit Cocoa Cream Sandwich Cookies",
     "priceUsd": 3.49,
     "country": "germany",
-    "image": "../images/bahlsenHitCocoaCreamSandwichCookies",
+    "image": "../images/bahlsenHitCocoaCreamSandwichCookies.jpg",
     "description": "Soft cocoa cookies with a rich chocolate filling."
   },
   {
     "itemName": "Maggi Seasoning",
     "priceUsd": 3.99,
     "country": "germany",
-    "image": "../images/maggiSeasoning",
+    "image": "../images/maggiSeasoning.jpg",
     "description": "A versatile seasoning sauce that can be used in a variety of dishes."
   },
   {
     "itemName": "Milka Alpine Milk Chocolate with Whole Hazelnuts",
     "priceUsd": 2.99,
     "country": "germany",
-    "image": "../images/milkaAlpineMilkChocolateWithWholeHazelnuts",
+    "image": "../images/milkaAlpineMilkChocolateWithWholeHazelnuts.jpg",
     "description": "Creamy milk chocolate with whole hazelnuts."
   },
   {
     "itemName": "Milka Choco Wafer",
     "priceUsd": 1.99,
     "country": "germany",
-    "image": "../images/milkaChocoWafer",
+    "image": "../images/milkaChocoWafer.jpg",
     "description": "Crunchy wafer cookies with a milk chocolate coating."
   },
   {
     "itemName": "Paprika Chips",
     "priceUsd": 1.49,
     "country": "germany",
-    "image": "../images/paprikaChips",
+    "image": "../images/paprikaChips.jpg",
     "description": "Savory potato chips with a bold paprika flavor."
   },
   {
     "itemName": "Maultaschen",
     "priceUsd": 4.99,
     "country": "germany",
-    "image": "../images/maultaschen",
+    "image": "../images/maultaschen.jpg",
     "description": "Traditional German pasta pockets filled with ground meat, spinach, and spices."
   },
   {
     "itemName": "Stollen",
     "priceUsd": 5.99,
     "country": "germany",
-    "image": "../images/stollen",
+    "image": "../images/stollen.jpg",
     "description": "A traditional German fruitcake made with dried fruit, nuts, and spices."
   },
   {
     "itemName": "Schneeballen",
     "priceUsd": 3.99,
     "country": "germany",
-    "image": "../images/schneeballen",
+    "image": "../images/schneeballen.jpg",
     "description": "A sweet pastry made from shortcrust dough that is tasty"
   },
   {
     "itemName": "Tim Tams",
     "priceUsd": 3.99,
     "country": "australia",
-    "image": "../images/timTams",
+    "image": "../images/timTams.jpg",
     "description": "A classic Australian chocolate biscuit with a creamy filling sandwiched between two crunchy chocolate biscuits."
   },
   {
     "itemName": "Shapes",
     "priceUsd": 2.99,
     "country": "australia",
-    "image": "../images/shapes",
+    "image": "../images/shapes.jpg",
     "description": "Savory baked crackers in a variety of flavors, such as BBQ, pizza, and cheese and bacon."
   },
   {
     "itemName": "Caramello Koalas",
     "priceUsd": 1.99,
     "country": "australia",
-    "image": "../images/caramelloKoalas",
+    "image": "../images/caramelloKoalas.jpg",
     "description": "Milk chocolate koala-shaped treats with a soft caramel center."
   },
   {
     "itemName": "Milo",
     "priceUsd": 7.99,
     "country": "australia",
-    "image": "../images/milo",
+    "image": "../images/milo.jpg",
     "description": "A chocolate and malt powder mix that can be enjoyed hot or cold as a refreshing beverage or added to desserts."
   },
   {
     "itemName": "Vegemite",
     "priceUsd": 4.99,
     "country": "australia",
-    "image": "../images/vegemite",
+    "image": "../images/vegemite.jpg",
     "description": "A salty and savory spread made from yeast extract, perfect on toast or sandwiches."
   },
   {
     "itemName": "Freddo Frogs",
     "priceUsd": 1.49,
     "country": "australia",
-    "image": "../images/freddoFrogs",
+    "image": "../images/freddoFrogs.png",
     "description": "Milk chocolate frog-shaped treats that are a childhood favorite in Australia."
   },
   {
     "itemName": "Allen's Snakes",
     "priceUsd": 2.99,
     "country": "australia",
-    "image": "../images/allensSnakes",
+    "image": "../images/allensSnakes.jpg",
     "description": "Chewy gummy candies in the shape of snakes with fruity flavors like raspberry and blackcurrant."
   },
   {
     "itemName": "Red Rock Deli Chips",
     "priceUsd": 3.99,
     "country": "australia",
-    "image": "../images/redRockDeliChips",
+    "image": "../images/redRockDeliChips.jpg",
     "description": "Gourmet-style potato chips with unique flavors like sweet chili and sour cream, honey soy chicken, and sea salt."
   },
   {
     "itemName": "Arnott's Tiny Teddy Biscuits",
     "priceUsd": 1.99,
     "country": "australia",
-    "image": "../images/arnottsTinyTeddyBiscuits",
+    "image": "../images/arnottsTinyTeddyBiscuits.jpg",
     "description": "Cute bear-shaped biscuits in a variety of flavors, such as honey and chocolate."
   },
   {
     "itemName": "Fantales",
     "priceUsd": 2.49,
     "country": "australia",
-    "image": "../images/fantales",
+    "image": "../images/fantales.jpg",
     "description": "Caramel-filled chocolates with trivia questions on the wrapper, a favorite among moviegoers in Australia."
   },
   {
     "itemName": "Smith's Chips",
     "priceUsd": 2.99,
     "country": "australia",
-    "image": "../images/smithsChips",
+    "image": "../images/smithsChips.jpg",
     "description": "Thin and crispy potato chips in classic flavors like salt and vinegar, chicken, and BBQ."
   },
   {
     "itemName": "Chicos",
     "priceUsd": 1.99,
     "country": "australia",
-    "image": "../images/chicos",
+    "image": "../images/chicos.jpg",
     "description": "Chewy black jelly babies with a unique licorice flavor that's popular in Australia."
   },
   {
     "itemName": "Minties",
     "priceUsd": 2.99,
     "country": "australia",
-    "image": "../images/minties",
+    "image": "../images/minties.jpg",
     "description": "Chewy mint-flavored candies that have been a favorite in Australia for over 90 years."
   },
   {
     "itemName": "Cheezels",
     "priceUsd": 2.99,
     "country": "australia",
-    "image": "../images/cheezels",
+    "image": "../images/cheezels.jpg",
     "description": "Ring-shaped corn snacks coated in cheese-flavored powder, a classic snack in Australia."
   },
   {
     "itemName": "Redskin Lollies",
     "priceUsd": 1.99,
     "country": "australia",
-    "image": "../images/redskinLollies",
+    "image": "../images/redskinLollies.png",
     "description": "Chewy raspberry-flavored candies that are a childhood favorite in Australia."
   }
 ]
