@@ -12,8 +12,12 @@ const seedDatabase = async () => {
   Product.destroy({
     where : {},
   });
-  
-  const users = await User.bulkCreate(userSeedData);
+
+
+  for (let i=0; i<userSeedData.length; i++) {
+    let users = await User.create(userSeedData[i]);
+    console.log(userSeedData[i]);
+  }
   const product = await Product.bulkCreate(productSeedData);
 
   process.exit(0);

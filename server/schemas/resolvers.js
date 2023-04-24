@@ -36,7 +36,6 @@ const resolvers = {
 	return await ProductInCart.findAll({where: {cartId: cartId}});
       }
 //      throw new AuthenticationError('Not logged in');
-    },
   },
   
   Mutation: {
@@ -99,13 +98,13 @@ const resolvers = {
 	{
 	  itemName,
 	  priceUsd,
-	  country
+	  country,
 	  image,
 	  description
 	});
     },
     
-    updateProduct: async (parent, {productId,itemName, priceUsd, country, image, description}, context) => {
+    updateProduct: async (parent, {productId, itemName, priceUsd, country, image, description}, context) => {
       return await Product.update(
 	{
 	  itemName,
@@ -125,14 +124,14 @@ const resolvers = {
 	{
 	  where: {id: poductId}
 	}
-      }
+      );
     },
     
     addToCart: async (parent, {cardIt, productId}, context) => {
       const cart = await ProductInCart.update(
-	{productId: productId}
+	{productId},
 	{
-	  where: {id: cartId}
+	  where: { cartId}
 	}
       );
     },
