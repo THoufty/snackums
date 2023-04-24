@@ -3,8 +3,8 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
   type User {
     id: ID!
-    first_name: String!
-    last_name: String!
+    firstName: String!
+    lastName: String!
     email: String!
     password: String!
   }
@@ -16,8 +16,8 @@ const typeDefs = gql`
 
   type Product {
     id: ID!
-    item_name: String!
-    price_usd: Float!
+    itemName: String!
+    priceUsd: Float!
     country: String!
     image: String
     description: String!
@@ -25,8 +25,8 @@ const typeDefs = gql`
 
   type ProductInCart {
     id: ID!
-    product_id: ID!
-    cart_id: ID!
+    productId: ID!
+    cartId: ID!
   }
 
   type Auth {
@@ -39,22 +39,24 @@ const typeDefs = gql`
     user(email: String!): User
     products: [Product]!
     product(id: ID!): Product
-    cart(user_id: ID!): [Product]!
+    cart(userId: ID!): [Product]!
   }
 
+  type Mutation {
+    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
+    updateUser(firstName: String, lastName: String, email: String, password: String): User
+    deleteUser(id: ID!): User
+    login(email: String!, password: String!): Auth
+
+  }
 `;
 
 module.exports = typeDefs;
 
-//  type Mutation {
-//    addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-//    updateUser(firstName: String, lastName: String, email: String, password: String): User
-//    deleteUser(id: ID!): User
-//    login(email: String!, password: String!): Auth
-//    addProduct(id:ID!, item_name: String!, price_usd: Decimal!, description: String!): Product
-//    updateProduct(id:ID!, item_name: String, price_usd: Decimal, country: String, image: String, description: String): Product
+//    addProduct(id:ID!, itemName: String!, priceUsd: Decimal!, description: String!): Product
+//    updateProduct(id:ID!, itemName: String, priceUsd: Decimal, country: String, image: String, description: String): Product
 //    deleteProduct(id:ID!): Product
-//    addToCart(id:ID!, product_id: ID!): Cart
-//    removeFromCart(id:ID!, product_id: ID!): Cart
+//    addToCart(id:ID!, productId: ID!): Cart
+//    removeFromCart(id:ID!, productId: ID!): Cart
 //  }
 //

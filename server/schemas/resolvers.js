@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, Cart } = require('../models');
+const { User, Product, Cart, ProductInCart } = require('../models');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -30,51 +30,62 @@ const resolvers = {
 
     cart: async (parent, {userId}, context) => {
       if(context.user) {
-	const cartId = await Cart.findOne({where: {user_id: userId}});
-	return await ProductInCart.findAll({where: {cart_id: cartId}});
+	const cartId = await Cart.findOne({where: {userId: userId}});
+	return await ProductInCart.findAll({where: {cartId: cartId}});
       }
 //      throw new AuthenticationError('Not logged in');
     },
   },
-
-//  Mutation: {
-//    addUser: async (parent, args) => {
-//      const user = await User.create(args);
-//      const token = signToken(user);
-//      return { token, user };
-//    },
-//    
-//    updateUser: async (parent, args, context) => {
-//      if (context.user) {
-//	return await User.update(
-//	  { args },
-//	  { where: {id: context.user.id}
-//	  }
-//	)
-//	  .catch()// insert Error handling
-//      }
-//	.
-//    },
-//
-//    deleteUser: async (parent, args, context) => {
-//      const user = await User.destroy(
-//	{where: {id: context.user.id}
-//	}
-//      );
-//    },
-//
-//    login: async (parent, { email, password }, context) => {
-//      const user = await User.findOne({where: { email }});
-//      if (!user) {
-//	throw new AuthenticationError('Incorrect credentials');
-//      }
-//      const correctPw = await user.isCorrectPassword(password); // what should we put here
-//      if (!correctPw) {
-//	throw new AuthenticationError('Incorrect credentials');
-//      }
-//      const token = signToken(user);
-//      return { token, user };
-//    },
+  
+  Mutation: {
+    addUser: async (parent, {firstName, lastName, email, password}) => {
+      const user = await User.create(
+	{
+	  firstName,
+	  lastName,
+	  email,
+	  password
+	});
+      const token = signToken(user);
+      return { token, user };
+    },
+    
+    updateUser: async (parent, {userId, firstName, lastName, email, password}, context) => {
+      if (context.user) {
+	return await User.update(
+	  {
+	    firstName,
+	    lastName,
+	    email,
+	    password
+	  },
+	  {
+	    where: {id: userId}
+	  }
+	)
+      }
+    },
+    
+    deleteUser: async (parent, {userId}, context) => {
+      const user = await User.destroy(
+	{
+	  where: {id: userId}
+	}
+      );
+    },
+    
+    login: async (parent, { email, password }, context) => {
+      const user = await User.findOne({where: { email }});
+      if (!user) {
+	throw new AuthenticationError("There is no user of that email");
+      }
+      const correctPw = await user.checkPassword(password); // what should we put here
+      if (!correctPw) {
+	throw new AuthenticationError("PAssword is incorecct");
+      }
+      const token = signToken(user);
+      return { token, user };
+    },
 //
 //    addProduct: async (parent, args, context) => {
 //      const product = await Product.create(args);
@@ -112,7 +123,7 @@ const resolvers = {
 //      );
 //    },
 //    
-//  }
+  }
 };
 
 module.exports = resolvers;

@@ -11,7 +11,7 @@ Cart.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    user_id: {
+    userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {

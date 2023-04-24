@@ -11,7 +11,7 @@ ProductInCart.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    product_id: {
+    productId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
@@ -23,7 +23,7 @@ ProductInCart.init(
         key: "id"
       }
     },
-    cart_id: {
+    cartId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
