@@ -47,12 +47,21 @@ const typeDefs = gql`
     updateUser(userId: ID!, firstName: String, lastName: String, email: String, password: String): User
     deleteUser(userId: ID!): User
     login(email: String!, password: String!): Auth
-    addProduct(productId:ID!, itemName: String!, priceUsd: Decimal!, description: String!): Product
-    updateProduct(productId:ID!, itemName: String, priceUsd: Decimal, country: String, image: String, description: String): Product
-    deleteProduct(poductId:ID!): Product
+    addProduct(productId: ID!,
+               itemName: String!,
+               priceUsd: Float!,
+               country: String,
+               image: String,
+               description: String!): Product
+    updateProduct(productId: ID!,
+                  itemName: String,
+                  priceUsd: Float,
+                  country: String,
+                  image: String,
+                  description: String): Product
+    deleteProduct(productId: ID!): Product
     addToCart(cartId:ID!, productId: ID!): Cart
-    removeFromCart(cartId ID!, productId: ID!): Cart
-
+    removeFromCart(cartId: ID!, productId: ID!): Cart
   }
 `;
 
