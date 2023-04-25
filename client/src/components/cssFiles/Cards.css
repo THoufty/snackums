@@ -1,0 +1,70 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.col {
+    float: left;
+    width: 25%;
+    padding: 0 10px;
+}
+
+
+.row {
+    margin: 0 -5px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+span {
+    color: black !important;
+    font-size: 24px !important;
+    font-weight: 700;
+}
+
+
+
+button {
+    opacity: 1.0;
+    filter: alpha(opacity=100);
+}
+
+
+/* Style the counter cards */
+.card {
+    width: 80%;
+    min-height: 550px;
+    border: 2px black solid !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    padding: 16px;
+    text-align: center;
+    background-color: #f1f1f1;
+}
+
+button:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=40);
+}
+
+/* Responsive columns - one column layout (vertical) on small screens */
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+        display: block;
+        margin-bottom: 20px;
+    }
+
+    button {
+        display: flex;
+        flex-direction: column;
+
+    }
+}
