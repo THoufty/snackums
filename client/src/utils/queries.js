@@ -12,9 +12,9 @@ export const QUERY_USER = gql`
 export const QUERY_PRODUCT = gql`
 {
   product {
-    _id
-    item_name
-    price_usd
+    id
+    itemName
+    priceUsd
     country
     image
     description
@@ -24,10 +24,10 @@ export const QUERY_PRODUCT = gql`
 
 export const QUERY_PRODUCT_COUNTRY = gql`
 query getSingleCountry($country: String!){
-product(country: $country) {
-    _id
-    item_name
-    price_usd
+country(country: $country) {
+    id
+    itemName
+    priceUsd
     image
     description
   }

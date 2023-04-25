@@ -40,6 +40,7 @@ const typeDefs = gql`
     products: [Product]!
     product(id: ID!): Product
     cart(userId: ID!): [Product]!
+    country(country: String!): [Product]!
   }
 
   type Mutation {

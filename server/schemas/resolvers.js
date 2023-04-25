@@ -24,9 +24,9 @@ const resolvers = {
     },
 
     // NOT FUNCTIONING - cannot readd poperties fo oundefined
-    product: async (parent, {productId}, context) => {
+    product: async (parent, {id}, context) => {
 //      if(context.product) {
-      return await Product.findByPk(productId);
+      return await Product.findByPk(id);
     },
 //      throw new AuthenticationError('Not logged in');
 //    },
@@ -35,10 +35,16 @@ const resolvers = {
       //if(context.user) {
 	const cartId = await Cart.findOne({where: {userId: userId}});
 	return await ProductInCart.findAll({where: {cartId: cartId}});
-      }
+      },
 //      throw new AuthenticationError('Not logged in');
-  },
   
+
+  country: async (parent, { country }, context) => {
+     return await Product.findAll({ where: { country: country } });
+    },
+  },
+
+
   Mutation: {
     
     // FUNCTIONING
