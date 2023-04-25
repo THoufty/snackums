@@ -23,14 +23,14 @@ Cart.init(
         key: "id"
       }
     },
-//    price_total_usd: {
-//      type: DataTypes.DECIMAL,
-//      allowNull: false,
-//      validate: {
-//        notNull: true,
-//        notEmpty: true,
-//      },
-//    },
+    //    price_total_usd: {
+    //      type: DataTypes.DECIMAL,
+    //      allowNull: false,
+    //      validate: {
+    //        notNull: true,
+    //        notEmpty: true,
+    //      },
+    //    },
   },
   {
     sequelize,

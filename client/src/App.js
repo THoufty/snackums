@@ -9,6 +9,7 @@ import { setContext } from '@apollo/client/link/context';
 
 import { AppProvider } from './utils/GlobalState';
 
+import Cart from './pages/Cart';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Nav from './components/Nav';
@@ -77,6 +78,10 @@ function App() {
 							<Route
 								path="/mexico"
 								element={<Mexico />}
+							/>
+								<Route
+								path="/cart"
+								element={<Cart />}
 							/>
 						</Routes>
 					</AppProvider>
