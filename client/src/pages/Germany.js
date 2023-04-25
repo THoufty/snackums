@@ -1,4 +1,3 @@
-import React from 'react';
 import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_PRODUCT_COUNTRY } from '../utils/queries'
 import "../components/cssFiles/Cards.css"
