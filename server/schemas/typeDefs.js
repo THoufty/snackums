@@ -27,6 +27,7 @@ const typeDefs = gql`
     id: ID!
     productId: ID!
     cartId: ID!
+    quantity: Int!
   }
 
   type Auth {

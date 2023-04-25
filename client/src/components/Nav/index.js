@@ -49,6 +49,9 @@ function Nav() {
 							<li style={styles.navGreenLi}>
 								<Link to="/Australia">Australia</Link>
 							</li>
+							<li>
+								<Link to="/Cart">Cart</Link>
+							</li>
 							<li style={styles.navGreenLi}>
 								<a href="/" onClick={() => Auth.logout()}>
 									Logout
