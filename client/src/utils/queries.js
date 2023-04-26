@@ -33,3 +33,13 @@ country(country: $country) {
   }
 }
 `;
+
+export const QUERY_PRODUCT_CART = gql`
+query queryProductCart($cartId: String!){
+  ProductInCart(cartId: $cartId) {
+  productId
+  userId
+  quantity
+  }
+}
+`;

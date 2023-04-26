@@ -9,11 +9,6 @@ const typeDefs = gql`
     password: String!
   }
 
-  type Cart {
-    id: ID!
-    user_id: ID!
-  }
-
   type Product {
     id: ID!
     itemName: String!
@@ -42,6 +37,7 @@ const typeDefs = gql`
     product(id: ID!): Product
     cart(userId: ID!): [Product]!
     country(country: String!): [Product]!
+    productInCart: [ProductInCart]
   }
 
   type Mutation {
@@ -62,8 +58,9 @@ const typeDefs = gql`
                   image: String,
                   description: String): Product
     deleteProduct(productId: ID!): Product
-    addToCart(cartId:ID!, productId: ID!): Cart
-    removeFromCart(cartId: ID!, productId: ID!): Cart
+    addToCart(cartId:ID!, productId: ID!, quantity: Int!): ProductInCart
+    removeFromCart(cartId: ID!, productId: ID!): User
+    addOrderNumber(userId: ID!): ProductInCart
   }
 `;
 
