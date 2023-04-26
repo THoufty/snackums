@@ -1,5 +1,6 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
+const uuid = require('../utils/helpers')
 
 class ProductInCart extends Model { }
 
@@ -15,8 +16,8 @@ ProductInCart.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
-	notNull: true,
-	notEmpty: true
+        notNull: true,
+        notEmpty: true
       },
       references: {
         model: "product",
@@ -31,13 +32,16 @@ ProductInCart.init(
         notEmpty: true,
       },
       references: {
-        model: "cart",
-        key: "id"
+        model: "user",
+        key: "cartId"
       }
     },
     quantity: {
       type: DataTypes.INTEGER,
       allowNull: false,
+    },
+    orderId: {
+      type: DataTypes.STRING,
     }
   },
   {

@@ -5,7 +5,7 @@ export const LOGIN = gql`
     login(email: $email, password: $password) {
       token
       user {
-        _id
+        id
       }
     }
   }
@@ -31,3 +31,19 @@ export const ADD_USER = gql`
     }
   }
 `;
+export const ADD_PRODUCT_TO_CART = gql`
+mutation addProduct2Cart(
+  $productId: ID!
+  $cartId: ID!
+  $quantity: Int!
+) {
+  addToCart(
+    productId: $productId
+    cartId: $cartId
+    quantity: $quantity
+  ) {
+    productId
+    cartId
+    quantity
+  }
+}`;
