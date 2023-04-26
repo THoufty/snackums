@@ -1,5 +1,5 @@
 const { AuthenticationError } = require('apollo-server-express');
-const { User, Product, Cart, ProductInCart } = require('../models');
+const { User, Product, ProductInCart } = require('../models');
 const { signToken } = require('../utils/auth');
 const { findByPk } = require('../models/ProductInCart');
 const uuid = require('../utils/helpers')
@@ -15,33 +15,35 @@ const resolvers = {
 
     // Functioning without authentcation
     user: async (parent, { email }, context) => {
-      //      if (context.user) {
-      return await User.findOne({ where: { email } });
+      if (context.user) {
+	return await User.findOne({ where: { email } });
+      }
+      throw new AuthenticationError('Not logged in');
     },
-    //      throw new AuthenticationError('Not logged in');
-    //    },
 
     // FUNCTIONING
     products: async (parent, args, context) => {
       return await Product.findAll();
     },
 
-    // NOT FUNCTIONING - cannot readd poperties fo oundefined
+    // FUNCTIONING
     product: async (parent, { id }, context) => {
-      //      if(context.product) {
+      if(context.product) {
       return await Product.findByPk(id);
+      }
+      throw new AuthenticationError('Not logged in');
     },
-    //      throw new AuthenticationError('Not logged in');
-    //    },
 
+    // FUNCTIONING
     cart: async (parent, { userId }, context) => {
-      //if(context.user) {
-      const cartId = await User.findOne({ where: { userId: userId } }, { attributes: [cartId] });
-      return await ProductInCart.findAll({ where: { cartId: cartId } });
+      if(context.user) {
+	let cartId = await User.findByPk(userId, { attributes: ["cartId"]});
+	cartId = cartId.dataValues.cartId;
+	return await ProductInCart.findAll({ where: { cartId: cartId } });
+      }
+      throw new AuthenticationError('Not logged in');
     },
-    //      throw new AuthenticationError('Not logged in');
-
-
+    
     country: async (parent, { country }, context) => {
       return await Product.findAll({ where: { country: country } });
     },
@@ -171,3 +173,4 @@ const resolvers = {
 };
 
 module.exports = resolvers;
+
