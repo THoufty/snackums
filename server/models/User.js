@@ -49,10 +49,10 @@ User.init(
         len: [8, 35],
       },
     },
-    cartId: {
-      type: DataTypes.INTEGER,
-      allowNull: false,
-    }
+//    cartId: {
+//      type: DataTypes.INTEGER,
+//      allowNull: false,
+//    }
   },
   {
     hooks: {

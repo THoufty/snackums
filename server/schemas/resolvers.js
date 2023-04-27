@@ -4,6 +4,16 @@ const { signToken } = require('../utils/auth');
 const { findByPk } = require('../models/ProductInCart');
 const uuid = require('../utils/helpers')
 
+const extractPoductInfo = (productObject) => {
+  let info = {
+    productId: productObject.id,
+    itemName: productObject.itemName,
+    priceUsd: productObject.priceUsd,
+    quantity: productObject.prodcutInCart.dataValues.productInCart.dataValues.quantity
+  }
+
+};
+
 
 const resolvers = {
   Query: {
@@ -13,7 +23,7 @@ const resolvers = {
       return await User.findAll();
     },
 
-    // Functioning without authentcation
+    // FUNCTIONING 
     user: async (parent, { email }, context) => {
       if (context.user) {
 	return await User.findOne({ where: { email } });
@@ -37,19 +47,43 @@ const resolvers = {
     // FUNCTIONING
     cart: async (parent, { userId }, context) => {
       if(context.user) {
-	let cartId = await User.findByPk(userId, { attributes: ["cartId"]});
-	cartId = cartId.dataValues.cartId;
-	return await ProductInCart.findAll({ where: { cartId: cartId } });
+	let userId = await User.findByPk(userId, { attributes: ["userId"]});
+	userId = userId.dataValues.cartId;
+	return await ProductInCart.findAll({ where: { userId: userId } });
       }
       throw new AuthenticationError('Not logged in');
     },
-    
+
+    // FUNCTIONING
     country: async (parent, { country }, context) => {
       return await Product.findAll({ where: { country: country } });
     },
+
+    // FUNCTIONING
     productInCart: async (parent, args, context) => {
-          return await ProductInCart.findAll();
+      console.log(await ProductInCart.findAll());
+      return await ProductInCart.findAll();
     },
+
+    // FUNCTIONING
+    productsInTheCart: async (parent, { userId }, context) => {
+      let users =  await User.findOne(
+	{
+	  where: {id: userId},
+	  include: Product
+	});
+      let productsInTheCart = users.dataValues.products;
+      productsInTheCart = productsInTheCart.map((currentItem) => {
+	return {
+	  productId: currentItem.id,
+	  itemName: currentItem.itemName,
+	  priceUsd: currentItem.priceUsd,
+	  quantity: currentItem.dataValues.productInCart.dataValues.quantity
+	}
+      });
+      return productsInTheCart;
+    },
+    
   },
     
   Mutation: {
@@ -67,10 +101,11 @@ const resolvers = {
       return { token, user };
     },
 
-    //NOT FUNCITONING
+    // FUNCITONING
     updateUser: async (parent, { userId, firstName, lastName, email, password }, context) => {
       if (context.user) {
-        return await User.update(
+	let [rowsAffected ,userUpdate] = await User.update(
+	  //	console.log(await User.update(
           {
             firstName,
             lastName,
@@ -78,28 +113,31 @@ const resolvers = {
             password
           },
           {
-            where: { id: userId }
+            returning: true,
+	    where: { id: context.user.id }
           }
-        )
+	);
       }
+      throw new AuthenticationError('Not logged in');
+      return rowsAffected;;
     },
-
-    //NOT FUNCTIONING
+    
+    // FUNCTIONING BUT NOT RETURNING ANYTING
     deleteUser: async (parent, { userId }, context) => {
       return await User.destroy(
         {
-          where: { id: userId }
+          where: { id: userId },
         }
       );
     },
 
+    // NEED TO TEST
     addOrderNumber: async (parent, { userId }) => {
-      const cartId = User.findByPk({ id: userId }, { attributes: [cartId] })
       const userOrder = await ProductInCart.update(
         {
           orderId: uuid()
         },
-        { where: { cartId: cartId } });
+        { where: { userId: userId } });
       return { userOrder };
     },
 
@@ -117,6 +155,7 @@ const resolvers = {
       return { token, user };
     },
 
+    // FUNCTIONING
     addProduct: async (parent, { itemName, priceUsd, country, image, description }, context) => {
       return await Product.create(
         {
@@ -128,6 +167,7 @@ const resolvers = {
         });
     },
 
+    // NEED TO TEST look at updateUSer
     updateProduct: async (parent, { productId, itemName, priceUsd, country, image, description }, context) => {
       return await Product.update(
         {
@@ -143,26 +183,29 @@ const resolvers = {
       );
     },
 
+    // FUNCTIONNING BUT NOT GETTING OUTPUT
     deleteProduct: async (parent, { productId }, context) => {
-      const product = await Product.destroy(
+      return await Product.destroy(
         {
-          where: { id: poductId }
+          where: { id: productId }
         }
       );
     },
 
-    addToCart: async (parent, { cartId, productId, quantity }, context) => {
+    // FUNCTIONING
+    addToCart: async (parent, { userId, productId, quantity }, context) => {
       const cart = await ProductInCart.create(
-        { productId, cartId, quantity }
+        { productId, userId, quantity }
       ); 
       return cart;
     },
 
-    removeFromCart: async (parent, { cartId, productId }, context) => {
+    // NEED TO TEST
+    removeFromCart: async (parent, { userId, productId }, context) => {
       const product = await ProductInCart.destroy(
         {
           where: {
-            cartId: cartId,
+            userId: userId,
             productId: poductId
           }
         }

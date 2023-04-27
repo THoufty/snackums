@@ -24,7 +24,7 @@ ProductInCart.init(
         key: "id"
       }
     },
-    cartId: {
+    userId: {
       type: DataTypes.INTEGER,
       allowNull: false,
       validate: {
@@ -33,7 +33,7 @@ ProductInCart.init(
       },
       references: {
         model: "user",
-        key: "cartId"
+        key: "id"
       }
     },
     quantity: {
