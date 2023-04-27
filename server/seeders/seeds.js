@@ -15,7 +15,7 @@ const seedDatabase = async () => {
 
 
   for (let i = 0; i < userSeedData.length; i++) {
-    await User.create({ ...userSeedData[i], cartId: i });
+    await User.create(userSeedData[i]);
   }
   await Product.bulkCreate(productSeedData);
 
