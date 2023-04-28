@@ -17,6 +17,12 @@ const extractPoductInfo = (productObject) => {
 
 const resolvers = {
   Query: {
+    me: async (parent, args, context) => {
+      if (context.user) {
+        return User.findOne({id: context.user.id})
+      }
+      throw new AuthenticationError('Not logged in');
+    },
 
     // FUNCTIONING
     users: async (parent, args, context) => {
@@ -45,11 +51,9 @@ const resolvers = {
     },
 
     // FUNCTIONING
-    cart: async (parent, { userId }, context) => {
+    cart: async (parent, args, context) => {
       if(context.user) {
-	let userId = await User.findByPk(userId, { attributes: ["userId"]});
-	userId = userId.dataValues.cartId;
-	return await ProductInCart.findAll({ where: { userId: userId } });
+	return await ProductInCart.findAll({ where: { userId: context.user.id } });
       }
       throw new AuthenticationError('Not logged in');
     },
@@ -60,16 +64,10 @@ const resolvers = {
     },
 
     // FUNCTIONING
-    productInCart: async (parent, args, context) => {
-      console.log(await ProductInCart.findAll());
-      return await ProductInCart.findAll();
-    },
-
-    // FUNCTIONING
-    productsInTheCart: async (parent, { userId }, context) => {
+    productsInTheCart: async (parent, args, context) => {
       let users =  await User.findOne(
 	{
-	  where: {id: userId},
+	  where: {id: context.user.id},
 	  include: Product
 	});
       let productsInTheCart = users.dataValues.products;
@@ -193,20 +191,21 @@ const resolvers = {
     },
 
     // FUNCTIONING
-    addToCart: async (parent, { userId, productId, quantity }, context) => {
+    addToCart: async (parent, { productId, quantity }, context) => {
+      console.log(context.user.id)
       const cart = await ProductInCart.create(
-        { productId, userId, quantity }
+        { productId, userId: context.user.id, quantity }
       ); 
       return cart;
     },
 
     // NEED TO TEST
-    removeFromCart: async (parent, { userId, productId }, context) => {
+    removeFromCart: async (parent, { productId }, context) => {
       const product = await ProductInCart.destroy(
         {
           where: {
-            userId: userId,
-            productId: poductId
+            userId: context.user.id,
+            productId: productId
           }
         }
       );

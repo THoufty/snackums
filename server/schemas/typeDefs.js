@@ -40,14 +40,14 @@ const typeDefs = gql`
   }
 
   type Query {
+    me: User!
     users: [User]!
     user(email: String!): User
     products: [Product]!
     product(id: ID!): Product
-    cart(userId: ID!): [ProductInCart]!
+    cart: [ProductInCart]!
     country(country: String!): [Product]!
-    productInCart: [ProductInCart]!
-    productsInTheCart(userId: ID!): [ProductsInTheCart]!
+    productsInTheCart: [ProductsInTheCart]!
   }
 
   type Mutation {
@@ -67,8 +67,8 @@ const typeDefs = gql`
                   image: String,
                   description: String): Product
     deleteProduct(productId: ID!): Product
-    addToCart(userId:ID!, productId: ID!, quantity: Int!): ProductInCart
-    removeFromCart(userId: ID!, productId: ID!): ProductInCart
+    addToCart(productId: ID!, quantity: Int!): ProductInCart
+    removeFromCart(productId: ID!): ProductInCart
     addOrderNumber(userId: ID!): ProductInCart
   }
 `;
