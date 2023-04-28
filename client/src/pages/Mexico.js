@@ -6,7 +6,6 @@ import "../components/cssFiles/Cards.css"
 
 const Mexico = () => {
 	const quantity = 1
-	const cartId = 1
 
 	const { loading, data } = useQuery(QUERY_PRODUCT_COUNTRY, {
 		variables: { country: "mexico" }
@@ -16,10 +15,10 @@ const Mexico = () => {
 		const addToCart = async (event) => {
 		event.preventDefault()
 		//onCick adds productId to User.productInCart
-		const productId = event.target.dataset.productid
+		const productId = event.currentTarget.dataset.productid
 		try {
 			const { data } = await addProduct({
-				variables: { productId, cartId, quantity },
+				variables: { productId, quantity },
 			});
 			window.location.reload();
 		} catch (err) {
@@ -34,7 +33,7 @@ const Mexico = () => {
 		<div className="container">
 			<div className="row">
 				{products.map((product) => (
-					<div className="col s12 m3">
+					<div key={product.id} className="col s12 m3">
 						<div className="card">
 							<div className="card-image">
 								<img alt="product" src={`${product.image}`}></img>

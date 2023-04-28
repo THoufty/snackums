@@ -1,13 +1,12 @@
 import { useQuery, useMutation } from '@apollo/client';
-import { QUERY_PRODUCT_COUNTRY,  } from '../utils/queries'
+import { QUERY_PRODUCT_COUNTRY, QUERY_ME } from '../utils/queries'
 import { ADD_PRODUCT_TO_CART } from '../utils/mutations'
 import "../components/cssFiles/Cards.css"
 
 
 const Germany = () => {
 	const quantity = 1
-	const cartId = 1
-
+	const {load, dota} = useQuery(QUERY_ME)
 	const { loading, data } = useQuery(QUERY_PRODUCT_COUNTRY, {
 		variables: { country: "germany" }
 	})
@@ -18,9 +17,9 @@ const Germany = () => {
 		//onCick adds productId to User.productInCart
 		const productId = event.currentTarget.dataset.productid
 		try {
-			console.log(event.currentTarget)
+			console.log(productId)
 			const { data } = await addProduct({
-				variables: { productId, cartId, quantity },
+				variables: { productId, quantity },
 			});
 			window.location.reload();
 		} catch (err) {
@@ -35,7 +34,7 @@ const Germany = () => {
 		<div className="container">
 			<div className="row">
 				{products.map((product) => (
-					<div className="col s12 m3">
+					<div key={product.id} className="col s12 m3">
 						<div className="card">
 							<div className="card-image">
 								<img alt="product" src={`${product.image}`}></img>
