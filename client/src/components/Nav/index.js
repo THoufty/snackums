@@ -40,7 +40,7 @@ function Nav() {
 					<div className="nav-wrapper">
 						<ul id="nav-mobile" className="right hide-on-med-and-down" style={styles.navGreenUl}>
 							<li style={styles.navGreenLi}>
-								<Link to="/Home">Home</Link>
+								<Link to="/">Home</Link>
 							</li>
 							<li style={styles.navGreenLi}>
 								<Link to="/Mexico">Mexico</Link>
@@ -72,7 +72,7 @@ function Nav() {
 					<div className="nav-wrapper">
 						<ul id="nav-mobile" className="right hide-on-med-and-down" style={styles.navGreenUl}>
 							<li style={styles.navGreenLi}>
-								<Link to="/Home">Home</Link>
+								<Link to="/">Home</Link>
 							</li>
 							<li>
 								<Link to="/Mexico">Mexico</Link>
