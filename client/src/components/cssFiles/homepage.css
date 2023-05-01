@@ -1,0 +1,26 @@
+.about {
+    position: relative;
+    height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+.about h3 {
+    font-size: 3em;
+    margin-bottom: -20px;
+}
+
+.about p {
+    font-size: 1.5em;
+}
+
+.about h3 {
+    text-shadow: 2px 2px 2px #333;
+}
+
+.about p {
+    font-size: 1.8rem;
+}

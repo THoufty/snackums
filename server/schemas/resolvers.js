@@ -72,7 +72,8 @@ const resolvers = {
 	});
       let productsInTheCart = users.dataValues.products;
       productsInTheCart = productsInTheCart.map((currentItem) => {
-	return {
+        return {
+    image: currentItem.image,
 	  productId: currentItem.id,
 	  itemName: currentItem.itemName,
 	  priceUsd: currentItem.priceUsd,
@@ -199,7 +200,7 @@ const resolvers = {
       return cart;
     },
 
-    // NEED TO TEST
+    // FUNCTIONING
     removeFromCart: async (parent, { productId }, context) => {
       const product = await ProductInCart.destroy(
         {

@@ -45,6 +45,7 @@ country(country: $country) {
 export const QUERY_PRODUCT_CART = gql`
 query queryProductCart{
   productsInTheCart {
+  image
   productId
   itemName
   priceUsd
