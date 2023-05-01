@@ -27,6 +27,7 @@ const typeDefs = gql`
   }
 
   type ProductsInTheCart {
+    image: String
     productId: ID!
     itemName: String
     priceUsd: Float!

@@ -9,6 +9,7 @@ const NoMatch = () => {
 				<h1>
 					No match for <code>{location.pathname}</code>
 				</h1>
+				<h2>:(</h2>
 			</div>
 		</div>
 	);

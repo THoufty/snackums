@@ -29,7 +29,8 @@ const Mexico = () => {
 
 
 	return (
-
+		<div>
+			<h3>Mexico</h3>
 		<div className="container">
 			<div className="row">
 				{products.map((product) => (
@@ -38,14 +39,20 @@ const Mexico = () => {
 							<div className="card-image">
 								<img alt="product" src={`${product.image}`}></img>
 								<span className="">{`${product.itemName}`}</span>
-								<button onClick={addToCart} data-productid={`${product.id}`} className="btn-floating halfway-fab waves-effect waves-light red" href="#"><i className="material-icons">add</i></button>
+							</div>
+							<div>
+								<span className="">${`${product.priceUsd}`}</span>
 							</div>
 							<div className="card-content">
 								<p>{`${product.description}`}</p>
 							</div>
+							<div>
+								<button onClick={addToCart} data-productid={`${product.id}`} className="btn-waves-effect waves-light btn blue" href="#"><i className="material-icons">add</i></button>
+							</div>
 						</div>
 					</div>
 				))}
+			</div>
 			</div>
 		</div>
 	);

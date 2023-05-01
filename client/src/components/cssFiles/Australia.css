@@ -1,0 +1,11 @@
+h3 {
+    padding: .7em 45%;
+    font-size: 5em !important;
+    margin-bottom: -20px;
+    font-weight: 800;
+}
+body{
+
+        background: #55C745;
+        background: linear-gradient(135deg, #55C745, #1EF8C7);
+}

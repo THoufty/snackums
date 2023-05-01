@@ -2,6 +2,7 @@ import { useQuery, useMutation } from '@apollo/client';
 import { QUERY_PRODUCT_COUNTRY, QUERY_ME } from '../utils/queries'
 import { ADD_PRODUCT_TO_CART } from '../utils/mutations'
 import "../components/cssFiles/Cards.css"
+import "../components/cssFiles/Germany.css"
 
 
 const Germany = () => {
@@ -10,6 +11,7 @@ const Germany = () => {
 	const { loading, data } = useQuery(QUERY_PRODUCT_COUNTRY, {
 		variables: { country: "germany" }
 	})
+	console.log(data)
 	const products = data?.country || [];
 	const [addProduct, { error }] = useMutation(ADD_PRODUCT_TO_CART)
 	const addToCart = async (event) => {
@@ -30,6 +32,8 @@ const Germany = () => {
 
 
 	return (
+		<div>
+		<h3>Germany</h3>
 
 		<div className="container">
 			<div className="row">
@@ -39,14 +43,20 @@ const Germany = () => {
 							<div className="card-image">
 								<img alt="product" src={`${product.image}`}></img>
 								<span className="">{`${product.itemName}`}</span>
-								<button onClick={addToCart} data-productid={`${product.id}`}className="btn-floating halfway-fab waves-effect waves-light red" href="#"><i className="material-icons">add</i></button>
+							</div>
+							<div>
+								<span className="">${`${product.priceUsd}`}</span>
 							</div>
 							<div className="card-content">
 								<p>{`${product.description}`}</p>
 							</div>
+							<div>
+								<button onClick={addToCart} data-productid={`${product.id}`} className="btn-waves-effect waves-light btn blue" href="#"><i className="material-icons">add</i></button>
+								</div>
 						</div>
 					</div>
 				))}
+			</div>
 			</div>
 		</div>
 	);

@@ -1,10 +1,12 @@
 import React from "react";
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
+import "../../components/cssFiles/navbar.css";
 
 const styles = {
 	navGreen: {
-		backgroundColor: 'green',
+		backgroundColor: 'white',
+		color: "black"
 	},
 
 	navGreenUl: {
@@ -21,7 +23,7 @@ const styles = {
 	},
 
 	navGreenA: {
-		color: 'white',
+		color: 'grey',
 		textDecoration: 'none',
 	},
 }
@@ -37,6 +39,9 @@ function Nav() {
 				<nav style={styles.navGreen}>
 					<div className="nav-wrapper">
 						<ul id="nav-mobile" className="right hide-on-med-and-down" style={styles.navGreenUl}>
+							<li style={styles.navGreenLi}>
+								<Link to="/Home">Home</Link>
+							</li>
 							<li style={styles.navGreenLi}>
 								<Link to="/Mexico">Mexico</Link>
 							</li>
@@ -66,6 +71,9 @@ function Nav() {
 				<nav style={styles.navGreen}>
 					<div className="nav-wrapper">
 						<ul id="nav-mobile" className="right hide-on-med-and-down" style={styles.navGreenUl}>
+							<li style={styles.navGreenLi}>
+								<Link to="/Home">Home</Link>
+							</li>
 							<li>
 								<Link to="/Mexico">Mexico</Link>
 							</li>
