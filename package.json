@@ -2,7 +2,7 @@
 	"name": "snackums",
 	"version": "1.0.0",
 	"description": "Snacks from around the world",
-	"homepage":"www.snackums-personal.com"
+	"homepage":"www.snackums-personal.com",
 	"main": "server/server.js",
 	"scripts": {
 		"start": "node server/server.js",
