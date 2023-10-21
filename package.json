@@ -1,24 +1,26 @@
 {
-	"name": "snackums",
-	"version": "1.0.0",
-	"homepage":"https://snackums-personal.herokuapp.com/",
-	"description": "Snacks from around the world",
-	"main": "server/server.js",
-	"scripts": {
-		"start": "node server/server.js",
-		"develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
-		"install": "cd server && npm i && cd ../client && npm i",
-		"seed": "cd server && npm run seed",
-		"build": "cd client && npm run build",
-		"heroku-postbuild": "npm run seed"
-	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
-	"devDependencies": {
-		"concurrently": "^5.1.0"
-	},
-	"dependencies": {
-		"dotenv": "^16.0.3"
-	}
+  "name": "snackums",
+  "version": "1.0.0",
+  "homepage": "https://snackums-personal.herokuapp.com/",
+  "description": "Snacks from around the world",
+  "main": "server/server.js",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "react": "^18.2.0",
+    "react-scripts": "^5.0.1"
+  },
+  "scripts": {
+    "start": "concurrently \"cd server && npm run start\" \"cd client && npm run start\"",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "npm i && cd server && npm i && cd ./../client && npm i",
+    "seed": "cd server && npm run seed",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run seed"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  }
 }
